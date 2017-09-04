@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.1.0) 
+project(CS127 CXX)
+
+include(cmake/includes/add_python_program.cmake)
+
+enable_testing()
+
+add_subdirectory("0 Hello World")
