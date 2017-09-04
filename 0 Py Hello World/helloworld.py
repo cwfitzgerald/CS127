@@ -1,5 +1,5 @@
-def create_hello():
+def get_hello():
     return "Hello World!"
 
 if __name__ == "__main__":
-    print(create_hello())
+    print(get_hello())
