@@ -48,4 +48,4 @@ endif()
 
 add_subdirectory("00 Py Hello World")
 add_subdirectory("00 Cpp Hello World")
-# add_subdirectory("01 Bondify")
+add_subdirectory("01 Bondify-Nameify")
