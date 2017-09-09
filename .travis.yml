@@ -14,19 +14,4 @@ before_script:
 script:
   - make
   - make test
-
-matrix:
-  include:
-    - os: linux
-      dist: precise
-      addons:
-        apt:
-          sources:
-            - sourceline: 'ppa:george-edison55/precise-backports'
-          packages:
-            - cmake
-            - cmake-data
-            - python3
-            - python3-pip
-    - os: linux
-      dist: trusty
+  
