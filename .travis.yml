@@ -13,7 +13,7 @@ before_script:
 
 script:
   - make
-  - ctest -V
+  - make test
 
 matrix:
   include:
