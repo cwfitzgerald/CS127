@@ -46,5 +46,6 @@ else()
 	check_and_add_flag(FLAG -Wswitch-default)
 endif()
 
-add_subdirectory("0 Py Hello World")
-add_subdirectory("0 Cpp Hello World")
+add_subdirectory("00 Py Hello World")
+add_subdirectory("00 Cpp Hello World")
+# add_subdirectory("01 Bondify")
