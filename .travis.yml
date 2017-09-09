@@ -1,11 +1,13 @@
-language: cpp
+  language: cpp
 
 addons:
   apt:
     packages:
       python3
+      pip3
 
 before_script:
+  - pip3 install pep8
   - mkdir build && cd build && cmake .. -DCMAKE_BUILD_TYPE=Debug
 
 script:
@@ -24,5 +26,6 @@ matrix:
             - cmake
             - cmake-data
             - python3
+            - pip3
     - os: linux
       dist: trusty
