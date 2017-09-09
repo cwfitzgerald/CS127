@@ -3,8 +3,8 @@
 addons:
   apt:
     packages:
-      python3
-      pip3
+      - python3
+      - pip3
 
 before_script:
   - pip3 install pep8
