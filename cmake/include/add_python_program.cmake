@@ -21,7 +21,7 @@ function(add_python_program)
 		add_custom_command(OUTPUT log/${file}.pep8
 		                   COMMAND mkdir -p ${OUTPUT_LOG_FOLDER}
 		                   COMMAND bash ARGS ${CMAKE_SOURCE_DIR}/cmake/runnable/output_harness.bash "${CMAKE_CURRENT_BINARY_DIR}/log/${file}.pep8" '${PEP8_COMPILE_FLAGS}'
-		                   DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/${file})
+		                   DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/${file} log/${file}.compile)
 		
 		add_custom_command(OUTPUT ${file}
 		                   COMMAND mkdir -p ${OUTPUT_FOLDER}
