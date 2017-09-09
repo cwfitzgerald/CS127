@@ -31,6 +31,7 @@ function(add_python_program)
 	endforeach()
 
 	foreach (test ${PT_TESTS})
+		set(NAME ${PT_NAME}/${test})
 		add_test(${NAME} ${PYTHON_EXECUTABLE} ${test} -v)
 	endforeach()
 

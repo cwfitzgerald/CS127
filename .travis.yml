@@ -5,6 +5,7 @@ addons:
     packages:
       - python3
       - python3-pip
+      - cmake
 
 before_script:
   - pip3 install pep8
