@@ -26,6 +26,7 @@ function(add_python_program)
 		add_custom_command(OUTPUT ${file}
 		                   COMMAND mkdir -p ${OUTPUT_FOLDER}
 		                   COMMAND cp ARGS ${CMAKE_CURRENT_SOURCE_DIR}/${file} ${CMAKE_CURRENT_BINARY_DIR}/${file}
+		                   COMMAND chmod ARGS +x ${CMAKE_CURRENT_BINARY_DIR}/${file}
 		                   DEPENDS log/${file}.pep8 log/${file}.compile)
 		set(PT_DEPEND ${PT_DEPEND} "${file}")
 	endforeach()
