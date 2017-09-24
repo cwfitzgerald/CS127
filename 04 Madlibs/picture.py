@@ -56,4 +56,4 @@ if __name__ == "__main__":
             ['.', '.', '.', '.', '.', '.']]
 
     print_matrix(grid)
-    print(matrix_transpose(grid))
+    print_matrix(matrix_transpose(grid))
