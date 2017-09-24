@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 
-def nameify(string):
+def nameify(string: str) -> str:
     string = string.strip()
     space_location = string.find(' ')
 

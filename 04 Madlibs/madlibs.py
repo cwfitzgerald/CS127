@@ -10,7 +10,7 @@ adjectives = ["loud", "ugly", "beautiful", "green", "old"]
 keywords = ["NOUN", "VERB", "ADJECTIVE"]
 
 
-def convert(word):
+def convert(word: str) -> str:
     global nouns, verbs, adjectives
     if "NOUN" == word:
         return random.choice(nouns)
@@ -22,7 +22,7 @@ def convert(word):
         return word
 
 
-def madlibs(story):
+def madlibs(story: str) -> str:
     # Prepare for search
     orig = story.strip()
 

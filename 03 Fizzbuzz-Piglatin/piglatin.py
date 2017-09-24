@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 
-def piglatinify(string):
+def piglatinify(string: str) -> str:
     string = string.strip()
 
     if len(string) == 0:

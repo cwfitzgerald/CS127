@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 
-def bondify(string):
+def bondify(string: str) -> str:
     string = string.strip()
 
     space_location = string.find(' ')

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 
-def fizzbuzz(x):
+def fizzbuzz(x: int) -> str:
     if (x % 15 == 0):
         return "fizzbuzz"
     elif (x % 5 == 0):

@@ -1,7 +1,7 @@
 #! /usr/bin/env python3
 
 
-def get_hello():
+def get_hello() -> str:
     return "Hello World!"
 
 if __name__ == "__main__":

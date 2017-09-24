@@ -3,7 +3,7 @@
 import typing
 
 
-def collatz(num: int):
+def collatz(num: int) -> int:
     if num % 2 == 0:
         return num // 2
     else:

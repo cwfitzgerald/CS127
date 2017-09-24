@@ -1,6 +1,6 @@
 include(CMakeParseArguments)
 
-find_package(PythonInterp 3.1 REQUIRED)
+find_package(PythonInterp 3.5 REQUIRED)
 
 function(add_python_program) 
 	cmake_parse_arguments(PT "" "NAME" "FILES;TESTS" ${ARGN})
