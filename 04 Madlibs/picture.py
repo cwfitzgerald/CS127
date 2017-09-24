@@ -13,7 +13,7 @@ def create_matrix(x: int, y: int) -> typing.List[typing.List[str]]:
 def matrix_consistant(matrix: typing.List[typing.List[str]]) -> bool:
     """Check if all rows have the same length within 2D array"""
     if len(matrix) == 0:
-        True
+        return True
 
     first_len = len(matrix[0])
 
@@ -56,4 +56,4 @@ if __name__ == "__main__":
             ['.', '.', '.', '.', '.', '.']]
 
     print_matrix(grid)
-    print_matrix(matrix_transpose(grid))
+    print(matrix_transpose(grid))
