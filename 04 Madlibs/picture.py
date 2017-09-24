@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-# Very clever... this is just matrix rotation
+# Very clever... this is just matrix transposition
 
 import typing
 
@@ -20,10 +20,10 @@ def matrix_consistant(matrix: typing.List[typing.List[str]]) -> bool:
     return all([len(col) == first_len for col in matrix])
 
 
-def matrix_cw_rotate(matrix: typing.List[typing.List[str]]) -> typing.List[typing.List[str]]:
+def matrix_transpose(matrix: typing.List[typing.List[str]]) -> typing.List[typing.List[str]]:
     """Rotate 2D array clockwise"""
     if len(matrix) == 0:
-        return [[]]
+        return []
 
     if not matrix_consistant(matrix):
         raise ValueError("Matrix row lengths inconsistant.")
@@ -39,6 +39,11 @@ def matrix_cw_rotate(matrix: typing.List[typing.List[str]]) -> typing.List[typin
 
     return new_matrix
 
+
+def print_matrix(matrix: typing.List[typing.List[str]]) -> None:
+    for row in matrix:
+        print("".join(row))
+
 if __name__ == "__main__":
     grid = [['.', '.', '.', '.', '.', '.'],
             ['.', 'O', 'O', '.', '.', '.'],
@@ -50,5 +55,5 @@ if __name__ == "__main__":
             ['.', 'O', 'O', '.', '.', '.'],
             ['.', '.', '.', '.', '.', '.']]
 
-    print(grid)
-    print(matrix_cw_rotate(grid))
+    print_matrix(grid)
+    print_matrix(matrix_transpose(grid))

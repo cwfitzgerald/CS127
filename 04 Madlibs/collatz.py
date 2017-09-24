@@ -23,4 +23,4 @@ if __name__ == "__main__":
 
         while val != 1:
             val = collatz(val)
-            print val
+            print(val)
