@@ -95,7 +95,4 @@ def decode(string):
 
 
 if __name__ == "__main__":
-    # print(distance(build_frequency_vector("I am going to write a sentence that is much more well suited"
-    #                                       "for what a normal sentence looks like"), letter_frequencies))
-
     print(decode("Xubbe, xem qhu oek teydw jetqo? Y qc xqlydw qd qriebkjbo medtuhvkb tqo, qdt Y xefu oek mybb jee"))
