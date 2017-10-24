@@ -83,3 +83,5 @@ if __name__ == "__main__":
     print_board(board)
     print(add_word_down(board, "helloo", 4, 5))
     print_board(board)
+    print(add_word_across(board, "hellohorizontal", 5, 0))
+    print_board(board)
