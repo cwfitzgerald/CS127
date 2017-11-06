@@ -39,6 +39,24 @@ def count_words_in_file(name):
         return word_count
 
 
+def create_markov_chain(list_of_words):
+    dict = collections.defaultdict(lambda: [])
+
+    for i in range(0, len(list_of_words) - 1):
+        dict[list_of_words[i]].append(list_of_words[i + 1])
+
+    return dict
+
+
+def create_markov_chain_from_file(name):
+    # Get filename relative to module location
+    filename = os.path.join(os.path.dirname(os.path.realpath(__file__)), name)
+
+    with open(filename) as file:
+        text = file.read()
+        return create_markov_chain([remove_nonalpha(w) for w in text.split()])
+
+
 if __name__ == "__main__":
-    d = count_words_in_file("hamlet.txt")
+    d = create_markov_chain_from_file("hamlet.txt")
     print(d)
