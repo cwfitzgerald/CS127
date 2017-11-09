@@ -66,6 +66,13 @@ def create_markov_chain_from_file(name):
         return create_markov_chain([remove_nonalpha(w) for w in text.split()])
 
 
+def sort_words(word_list):
+    d = collections.defaultdict(lambda: [])
+    for w1, w2 in zip(word_list, word_list[1:]):
+        d[w1].append(w2)
+    return d
+
+
 if __name__ == "__main__":
     d = create_markov_chain_from_file("psalms.txt")
     pprint.pprint(d)

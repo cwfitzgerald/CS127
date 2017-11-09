@@ -2,19 +2,18 @@
 #include <chrono>
 #include <fstream>
 #include <iostream>
-#include <map>
 #include <sstream>
 #include <unordered_map>
 #include <vector>
 
 using string_list = std::vector<std::string>;
 
-string_list split(const std::string string) {
+string_list split(const std::string& string) {
 	std::vector<std::string> output;
 	std::string cache;
 	for (auto c : string) {
 		char lower = static_cast<char>(std::tolower(static_cast<unsigned char>(c)));
-		if ('a' <= lower && lower <= 'z') {
+		if (('a' <= lower && lower <= 'z') || lower == '|') {
 			cache.push_back(lower);
 		}
 		else if (cache.size() != 0) {
@@ -28,7 +27,7 @@ string_list split(const std::string string) {
 
 using markov = std::unordered_map<std::string, std::vector<std::string>>;
 
-__attribute__((noinline)) markov build_chain(const string_list& list) {
+markov build_chain(const string_list& list) {
 	markov m;
 	for (std::size_t i = 0; i < list.size() - 1; ++i) {
 		m[list[i]].emplace_back(list[i + 1]);
