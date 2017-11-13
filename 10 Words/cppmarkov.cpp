@@ -8,6 +8,8 @@
 
 using string_list = std::vector<std::string>;
 
+string_list split(const std::string& string);
+
 string_list split(const std::string& string) {
 	std::vector<std::string> output;
 	std::string cache;
@@ -26,6 +28,8 @@ string_list split(const std::string& string) {
 }
 
 using markov = std::unordered_map<std::string, std::vector<std::string>>;
+
+markov build_chain(const string_list& list);
 
 markov build_chain(const string_list& list) {
 	markov m;
@@ -55,5 +59,5 @@ int main() {
 		std::cout << '\n';
 	}
 
-	std::cout << (after - before).count() / 1000000.0 << "ms\n";
+	std::cout << double((after - before).count()) / 1000000.0 << "ms\n";
 }
