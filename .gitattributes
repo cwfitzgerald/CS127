@@ -1,3 +1,4 @@
 *.dat binary
 10[[:space:]]Words/*.txt binary
 11[[:space:]]Markov/*.txt binary
+12[[:space:]]Inverse[[:space:]]Indices/*.csv binary
