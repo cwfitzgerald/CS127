@@ -7,6 +7,7 @@ set (headers get_hello.hpp)
 set (files ${lib_sources} ${exe_sources} ${test_sources} ${headers})
 
 format(FILES ${files})
+lint(FILES ${lib_sources} ${exe_sources})
 
 add_library(helloworld_gen STATIC ${lib_sources})
 add_executable(helloworld ${exe_sources})

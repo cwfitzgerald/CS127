@@ -14,11 +14,11 @@ string_list split(const std::string& string) {
 	std::vector<std::string> output;
 	std::string cache;
 	for (auto c : string) {
-		char lower = static_cast<char>(std::tolower(static_cast<unsigned char>(c)));
+		auto lower = static_cast<char>(std::tolower(static_cast<unsigned char>(c)));
 		if (('a' <= lower && lower <= 'z') || lower == '|') {
 			cache.push_back(lower);
 		}
-		else if (cache.size() != 0) {
+		else if (!cache.empty()) {
 			output.emplace_back(std::move(cache));
 			cache = std::string();
 		}

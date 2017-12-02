@@ -7,3 +7,6 @@ add_python_program(NAME 10_py_words
                    )
 add_executable(10_cpp_markov cppmarkov.cpp)
 add_executable(10_cpp_markov_faster cppmarkov-faster.cpp)
+
+lint(FILES cppmarkov.cpp cppmarkov-faster.cpp)
+format(FILES cppmarkov.cpp cppmarkov-faster.cpp)
