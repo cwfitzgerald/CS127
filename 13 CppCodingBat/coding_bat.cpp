@@ -93,9 +93,13 @@ int caught_speeding(double speed, bool is_birthday) {
 		          << "; Expected == " << expected << '\n';                                         \
 	}
 
+#define START_TEST(function) std::cerr << "Testing function " #function << "():\n"
+#define END_TEST(function) std::cerr << "End testing function " #function << "().\n\n"
+
 using namespace std::string_literals;
 
 int main() {
+	START_TEST(string_times);
 	TEST_HARNESS(string_times, "HiHi", "Hi", 2);
 	TEST_HARNESS(string_times, "HiHiHi", "Hi", 3);
 	TEST_HARNESS(string_times, "Hi", "Hi", 1);
@@ -106,7 +110,9 @@ int main() {
 	TEST_HARNESS(string_times, "", "", 4);
 	TEST_HARNESS(string_times, "codecode", "code", 2);
 	TEST_HARNESS(string_times, "codecodecode", "code", 3);
+	END_TEST(string_times);
 
+	START_TEST(front_times);
 	TEST_HARNESS(front_times, "ChoCho", "Chocolate", 2);
 	TEST_HARNESS(front_times, "ChoChoCho", "Chocolate", 3);
 	TEST_HARNESS(front_times, "AbcAbcAbc", "Abc", 3);
@@ -114,7 +120,9 @@ int main() {
 	TEST_HARNESS(front_times, "AAAA", "A", 4);
 	TEST_HARNESS(front_times, "", "", 4);
 	TEST_HARNESS(front_times, "", "Abc", 0);
+	END_TEST(front_times);
 
+	START_TEST(string_bits);
 	TEST_HARNESS(string_bits, "Hlo", "Hello")
 	TEST_HARNESS(string_bits, "H", "Hi")
 	TEST_HARNESS(string_bits, "Hello", "Heeololeo")
@@ -125,7 +133,9 @@ int main() {
 	TEST_HARNESS(string_bits, "p", "pi")
 	TEST_HARNESS(string_bits, "HloKte", "Hello Kitten")
 	TEST_HARNESS(string_bits, "happy", "hxaxpxpxy")
+	END_TEST(string_bits);
 
+	START_TEST(lone_sum);
 	TEST_HARNESS(lone_sum, 6, 1, 2, 3)
 	TEST_HARNESS(lone_sum, 2, 3, 2, 3)
 	TEST_HARNESS(lone_sum, 0, 3, 3, 3)
@@ -135,7 +145,9 @@ int main() {
 	TEST_HARNESS(lone_sum, 14, 2, 9, 3)
 	TEST_HARNESS(lone_sum, 9, 4, 2, 3)
 	TEST_HARNESS(lone_sum, 3, 1, 3, 1)
+	END_TEST(lone_sum);
 
+	START_TEST(string_splosion);
 	TEST_HARNESS(string_splosion, "CCoCodCode", "Code")
 	TEST_HARNESS(string_splosion, "aababc", "abc")
 	TEST_HARNESS(string_splosion, "aab", "ab")
@@ -146,7 +158,9 @@ int main() {
 	TEST_HARNESS(string_splosion, "BByBye", "Bye")
 	TEST_HARNESS(string_splosion, "GGoGooGood", "Good")
 	TEST_HARNESS(string_splosion, "BBaBad", "Bad")
+	END_TEST(string_splosion);
 
+	START_TEST(cigar_party);
 	TEST_HARNESS(cigar_party, false, 30, false)
 	TEST_HARNESS(cigar_party, true, 50, false)
 	TEST_HARNESS(cigar_party, true, 70, true)
@@ -158,7 +172,9 @@ int main() {
 	TEST_HARNESS(cigar_party, false, 39, false)
 	TEST_HARNESS(cigar_party, true, 40, true)
 	TEST_HARNESS(cigar_party, false, 39, true)
+	END_TEST(cigar_party);
 
+	START_TEST(caught_speeding);
 	TEST_HARNESS(caught_speeding, 0, 60, false)
 	TEST_HARNESS(caught_speeding, 1, 65, false)
 	TEST_HARNESS(caught_speeding, 0, 65, true)
@@ -171,4 +187,5 @@ int main() {
 	TEST_HARNESS(caught_speeding, 0, 40, false)
 	TEST_HARNESS(caught_speeding, 0, 40, true)
 	TEST_HARNESS(caught_speeding, 2, 90, false)
+	END_TEST(caught_speeding);
 }
