@@ -35,6 +35,7 @@ std::int64_t lone_sum(std::int64_t a, std::int64_t b, std::int64_t c) {
 	bool use_a = true;
 	bool use_b = true;
 	bool use_c = true;
+
 	if (a == b) {
 		use_a = false;
 		use_b = false;
@@ -85,9 +86,10 @@ int caught_speeding(double speed, bool is_birthday) {
 #define TEST_HARNESS(function, expected, ...)                                                      \
 	{                                                                                              \
 		auto func_out = function(__VA_ARGS__);                                                     \
-		bool same = func_out == expected;                                                          \
-		std::cerr << std::boolalpha << "Equal: " << same                                           \
-		          << "; " #function "(" #__VA_ARGS__ ") == " << func_out                           \
+		bool same = func_out == expected; /* NOLINT */                                             \
+		std::cerr << std::boolalpha << (same ? "Equal: " : "Equal: \u001b[31;1m") << same          \
+		          << (same ? "; " : "\u001b[0m; ")                                                 \
+		          << #function "(" #__VA_ARGS__ ") == " << func_out                                \
 		          << "; Expected == " << expected << '\n';                                         \
 	}
 
