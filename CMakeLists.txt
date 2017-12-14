@@ -77,5 +77,6 @@ add_linted_subdirectory("11 Markov")
 add_linted_subdirectory("12 Inverse Indices")
 add_linted_subdirectory("13 CppCodingBat")
 add_linted_subdirectory("14 CppTriangles")
+add_linted_subdirectory("15 Final")
 
 configure_linter()
