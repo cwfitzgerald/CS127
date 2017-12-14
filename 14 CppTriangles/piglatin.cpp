@@ -25,17 +25,18 @@ std::string piglatinify(const std::string& input) {
 	if (is_vowel(input[0])) {
 		return input + "ay"s;
 	}
-	else {
-		return input.substr(1) + input[0] + "ay"s;
-	}
+	return input.substr(1) + input[0] + "ay"s;
 }
 
 #define TEST_HARNESS(function, expected, ...)                                                                          \
 	{                                                                                                                  \
 		auto func_out = function(__VA_ARGS__);                                                                         \
 		bool same = func_out == expected; /* NOLINT */                                                                 \
-		std::cerr << std::boolalpha << (same ? "Equal: \u001b[32;1m" : "Equal: \u001b[31;1m") << same << "\u001b[0m; " \
-		          << #function "(" #__VA_ARGS__ ") == " << func_out << "; Expected == " << expected << '\n';           \
+		std::cerr << std::boolalpha                                                                                    \
+		          << (same ? static_cast<const char*>("Equal: \u001b[32;1m")                                           \
+		                   : static_cast<const char*>("Equal: \u001b[31;1m"))                                          \
+		          << same << "\u001b[0m; " << #function "(" #__VA_ARGS__ ") == " << func_out                           \
+		          << "; Expected == " << expected << '\n';                                                             \
 	}
 
 #define START_TEST(function) std::cerr << "Testing function " #function << "():\n"
